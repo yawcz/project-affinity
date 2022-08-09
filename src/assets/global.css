@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap');
+.inward {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+@media only screen and (max-width: 1280px) {
+  .inward {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+.t-h1 {
+  font-size: max(3rem, min(6.5vw, 3.5rem));
+  line-height: max(4rem, min(8vw, 4.5rem));
+}
+.t-h2 {
+  font-size: max(1.5rem, min(5vw, 2rem));
+  line-height: max(2rem, min(6vw, 3rem));
+}
+.t-h3 {
+  font-size: max(1rem, min(4.5vw, 1.5rem));
+  line-height: min(7.5vw, 2.5rem);
+}
+.t-h4 {
+  font-size: max(1rem, min(4vw, 1.2rem));
+  line-height: min(7vw, 2rem);
+}
+.t-h5 {
+  font-size: max(0.95rem, min(2vw, 1.2rem));
+  line-height: 1rem;
+}
+.bold {
+  font-family: "Barlow";
+  font-weight: 700;
+}
+.medium {
+  font-family: "Barlow";
+  font-weight: 500;
+}
+.txt-white {
+  color: #f8f9fe!important;
+}
+.bg-white {
+  background-color: #f8f9fe!important;
+}
+.txt-pink {
+  color: #fa5a73!important;
+}
+.bg-pink {
+  background-color: #fa5a73!important;
+}
+.txt-red, .txt-red * {
+  color: #900c3f!important;
+}
+.bg-red {
+  background-color: #900c3f!important;
+}
+.txt-grey {
+  color: #d2cdca!important;
+}
+.bg-cream {
+  background-color: #FEF9DB!important;
+}
