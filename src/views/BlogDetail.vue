@@ -3,16 +3,17 @@
     class="mt-16 mb-md-16 mb-12"
     v-if="this.valid"
   >
-    <div class="inward">
-      <v-row justify="center">
-        <v-img
-          :src="this.thumbnail"
-          width="100%"
-        ></v-img>
-        <div style="width:100%;" class="t-h4 bold">{{ this.date }}</div>
-        <div class="t-h2 bold pb-8">{{ this.title }}</div>
-        <div v-html="this.content" class="t-h4 medium text-justify"></div>
+  <div class="inward">
+      <v-img
+        :src="this.thumbnail"
+        width="100%"
+      ></v-img>
+      <v-row>
+        <v-col cols="6" class="t-h4 bold">{{ this.date }}</v-col>
+        <v-col cols="6" class="t-h4 bold text-right">{{ this.author }}</v-col>
       </v-row>
+      <div class="t-h2 bold pb-8 text-center">{{ this.title }}</div>
+      <div v-html="this.content" class="t-h4 medium text-justify"></div>
     </div>
   </v-sheet>
   <v-sheet
@@ -31,6 +32,8 @@ import {
   getDocs,
 } from 'firebase/firestore';
 import { format } from 'date-fns';
+import DOMPurify from 'dompurify';
+import { marked } from 'marked';
 
 import PageNotFound from '@/views/PageNotFound.vue';
 
@@ -41,6 +44,7 @@ export default {
     thumbnail: '',
     title: '',
     date: '',
+    author: '',
     content: '',
   }),
   components: {
@@ -56,7 +60,8 @@ export default {
             this.thumbnail = doc.data().thumbnail;
             this.title = doc.data().title;
             this.date = format(doc.data().date.toDate(), 'dd-MM-yyyy');
-            this.content = doc.data().content;
+            this.author = doc.data().author;
+            this.content = DOMPurify.sanitize(marked.parse(doc.data().content.replaceAll("\\n", "\n")));
           });
         });
       }
@@ -64,3 +69,9 @@ export default {
   },
 };
 </script>
+
+<style>
+h1 {
+  margin-bottom: 15px;
+}
+</style>
