@@ -6,7 +6,7 @@
       class="bg-grey d-flex justify-lg-space-around pl-lg-0"
     >
       <v-app-bar-nav-icon
-        @click="drawer=true"
+        @click="drawer = true"
         class="d-lg-none"
       />
       <router-link class="router-link" to="/">

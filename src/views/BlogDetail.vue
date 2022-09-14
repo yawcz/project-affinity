@@ -55,7 +55,7 @@ export default {
           snapshot2.forEach((doc) => {
             this.thumbnail = doc.data().thumbnail;
             this.title = doc.data().title;
-            this.date = format(doc.data().date.toDate(), 'dd-mm-yy');
+            this.date = format(doc.data().date.toDate(), 'dd-MM-yyyy');
             this.content = doc.data().content;
           });
         });

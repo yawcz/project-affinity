@@ -60,19 +60,13 @@
       </div>
     </v-sheet>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fa5a73" fill-opacity="1" d="M0,32L60,69.3C120,107,240,181,360,186.7C480,192,600,128,720,122.7C840,117,960,171,1080,165.3C1200,160,1320,96,1380,64L1440,32L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
-    <v-sheet class="inward">
-      <div class="t-h2 bold txt-red pb-md-16 pb-6">RECENT BLOGS</div>
-      <v-list width="100%" class="pa-0 ma-0">
-        <v-list-item
-          width="100%"
-          v-for="n in Math.min(3, this.totalBlogs)"
-          :key=n
-          class="pa-0 ma-0 txt-white"
-        >
-          <BlogPreview :id="totalBlogs - n + 1" />
-        </v-list-item>
-      </v-list>
-    </v-sheet>
+    <div class="inward">
+      <BlogPreview
+        v-for="n in this.totalBlogs"
+        :key=n
+        :id="totalBlogs - n + 1"
+      />
+    </div>
   </v-sheet>
 </template>
 
@@ -93,10 +87,10 @@ export default {
     totalBlogs: 0,
     counters: [{
       label: 'BENEFICIARIES HELPED',
-      to: 149,
+      to: 96,
     }, {
       label: 'VOLUNTEERS RECRUITED',
-      to: 38,
+      to: 45,
     }, {
       label: 'INITIATIVES ORGANISED',
       to: 12,

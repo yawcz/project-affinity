@@ -1,6 +1,6 @@
 <template>
   <v-row>
-    <v-col cols=12 md=6 class="pr-lg-16 pr-md-6">
+    <v-col cols=12 md=6 class="pr-lg-12 pr-md-6">
       <v-img :src="this.thumbnail"></v-img>
     </v-col>
     <v-col cols=12 md=6 align="left" class="d-flex flex-column pl-lg-12 pl-md-6">
@@ -38,7 +38,7 @@ export default {
       snapshot.forEach((doc) => {
         this.thumbnail = doc.data().thumbnail;
         this.title = doc.data().title;
-        this.date = format(doc.data().date.toDate(), 'dd-mm-yy');
+        this.date = format(doc.data().date.toDate(), 'dd-MM-yyyy');
       });
     });
   },

@@ -30,11 +30,11 @@
   line-height: 1rem;
 }
 .bold {
-  font-family: "Barlow";
+  font-family: "Barlow", Arial, Helvetica, sans-serif;
   font-weight: 700;
 }
 .medium {
-  font-family: "Barlow";
+  font-family: "Barlow", Arial, Helvetica, sans-serif;
   font-weight: 500;
 }
 .txt-white {

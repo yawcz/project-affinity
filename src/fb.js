@@ -1,3 +1,5 @@
+// NOTE: Database is read-only so there's no harm in making this public
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
